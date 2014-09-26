@@ -9,6 +9,9 @@ html, body {
 #canevas {
     min-height:100%;
     position:relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    
 }
 
 #contenu {
