@@ -7,3 +7,27 @@ nav
   height:20%; 
   width:100%; 
   }
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+#canevas {
+    min-height:100%;
+    position:relative;
+}
+
+#contenu {
+    padding:10px;
+    padding-bottom:60px;
+}
+
+#piedDePage {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:#6cf;
+}
