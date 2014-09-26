@@ -1,0 +1,9 @@
+body {font-family: Verdana, Arial; font-size: 15px;}
+nav 
+ {
+  position:relative; 
+  float:top; 
+  background-color:#fffff; 
+  height:20%; 
+  width:100%; 
+  }
