@@ -11,6 +11,7 @@ html, body {
     position:relative;
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
+	color:#475673;
     
 }
 
@@ -34,10 +35,6 @@ html, body {
     width:100%;
     background:#6cf;
 }
-
-
-
-
 
 #menu {
   background: #f96e5b;
@@ -80,15 +77,16 @@ html, body {
   text-transform: uppercase;
   font-size: 14px;
   position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
+  transition: color .25s;
+  transition: color .25s;
+  transition: color .25s;
+  transition: color .25s;
   transition: color .25s;
 }
 #menu ul li a:hover {
   color: #475673;
 }
+
 #menu ul li a:hover:before {
   width: 100%;
 }
@@ -100,7 +98,7 @@ html, body {
   top: 19px;
   height: 6px;
   width: 6px;
-  background: #ffffff;
+  background: #FFFFFF;
   opacity: .5;
 }
 #menu ul li a:before {
@@ -112,10 +110,10 @@ html, body {
   height: 3px;
   width: 0;
   background: #475673;
-  -webkit-transition: width .25s;
-  -moz-transition: width .25s;
-  -ms-transition: width .25s;
-  -o-transition: width .25s;
+  transition: width .25s;
+  transition: width .25s;
+  transition: width .25s;
+  transition: width .25s;
   transition: width .25s;
 }
 #menu ul li.last > a:after,
@@ -142,8 +140,8 @@ html, body {
   }
   #menu ul li a {
     width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
     box-sizing: border-box;
     border-bottom: 1px solid #fb998c;
   }
@@ -157,4 +155,49 @@ html, body {
   #menu ul li a:before {
     display: none;
   }
+}
+    
+#imagequiz {
+	position: relative;
+    width: 50%;
+    float: left;
+}
+
+#imageicon {
+float: right;
+}
+
+@media screen and (max-width: 768px) {
+  #imagequiz {
+    position: relative;
+    width: 100%;
+    float: top;
+  }
+.description .bouton {
+  right: 0%;
+}	
+	
+}
+	
+.bouton {
+  border-radius: 5;
+  border-radius: 5;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #f96e5b;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  background: #fb998c;
+  text-decoration: none;
+}
+
+.description .bouton {
+  position: absolute; 
+  top: 65%; 
+  right: 20%;
 }
