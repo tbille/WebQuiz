@@ -23,27 +23,35 @@ h2 {
 	color:#475673;
 }
 
+.canevas {
+    min-height:100%;
+    position:relative;
+}
+
 .contenu {
-    padding:10px;
+  padding:10px;    
+  padding-bottom:120px;
  
 }
+/*
 
-.contenu:after {
-  content: "";
-  display: block;
-}
+  Pied de page
 
-.piedDePage, #contenu:after{
- height: 120px;  
-}
-
+*/
 .piedDePage {
-    position: absolute;
+    position:absolute;
     bottom:0;
     width:100%;
-    background:#6cf;
+    height:120px;
+    background:#DDDDEE;
+
 }
 
+/*
+
+  MENU
+
+*/
 .menu {
   background: #f96e5b;
   width: auto;
@@ -214,3 +222,21 @@ width: 15%;
 
 
 
+
+.contenuPage{
+  display: block;
+  float: left;
+}
+aside {
+  display: block;
+  float: left;
+  background-color:#FF6699;
+  position: fixed;
+  right: 0.5%;
+}
+
+.centrerfooter{
+  text-align: center;
+  padding-top: 3%;
+ /*  vertical-align: middle;*/
+}
