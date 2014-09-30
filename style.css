@@ -6,41 +6,49 @@ html, body {
     height:100%;
 }
 
-#canevas {
+p {
     min-height:100%;
     position:relative;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-	color:#475673;
-    
+    font-size: 14px;
+	color:#475673;  
 }
 
-#contenu {
+h2 { 
+	min-height:100%;
+    position:relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-size: 20px;
+	color:#475673;
+}
+
+.contenu {
     padding:10px;
  
 }
 
-#contenu:after {
+.contenu:after {
   content: "";
   display: block;
 }
 
-#piedDePage, #contenu:after{
+.piedDePage, #contenu:after{
  height: 120px;  
 }
 
-#piedDePage {
+.piedDePage {
     position: absolute;
     bottom:0;
     width:100%;
     background:#6cf;
 }
 
-#menu {
+.menu {
   background: #f96e5b;
   width: auto;
 }
-#menu ul {
+.menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -48,7 +56,7 @@ html, body {
   display: block;
   zoom: 1;
 }
-#menu ul:after {
+.menu ul:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -56,18 +64,18 @@ html, body {
   clear: both;
   visibility: hidden;
 }
-#menu ul li {
+.menu ul li {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
-#menu.align-right ul li {
+.menu.align-right ul li {
   float: right;
 }
-#menu.align-center ul {
+.menu.align-center ul {
   text-align: center;
 }
-#menu ul li a {
+.menu ul li a {
   color: #ffffff;
   text-decoration: none;
   display: block;
@@ -83,14 +91,14 @@ html, body {
   transition: color .25s;
   transition: color .25s;
 }
-#menu ul li a:hover {
+.menu ul li a:hover {
   color: #475673;
 }
 
-#menu ul li a:hover:before {
+.menu ul li a:hover:before {
   width: 100%;
 }
-#menu ul li a:after {
+.menu ul li a:after {
   content: "";
   display: block;
   position: absolute;
@@ -101,7 +109,7 @@ html, body {
   background: #FFFFFF;
   opacity: .5;
 }
-#menu ul li a:before {
+.menu ul li a:before {
   content: "";
   display: block;
   position: absolute;
@@ -116,43 +124,43 @@ html, body {
   transition: width .25s;
   transition: width .25s;
 }
-#menu ul li.last > a:after,
-#menu ul li:last-child > a:after {
+.menu ul li.last > a:after,
+.menu ul li:last-child > a:after {
   display: none;
 }
-#menu ul li.active a {
+.menu ul li.active a {
   color: #475673;
 }
-#menu ul li.active a:before {
+.menu ul li.active a:before {
   width: 100%;
 }
-#menu.align-right li.last > a:after,
-#menu.align-right li:last-child > a:after {
+.menu.align-right li.last > a:after,
+.menu.align-right li:last-child > a:after {
   display: block;
 }
-#menu.align-right li:first-child a:after {
+.menu.align-right li:first-child a:after {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  #menu ul li {
+  .menu ul li {
     float: none;
     display: block;
   }
-  #menu ul li a {
+  .menu ul li a {
     width: 100%;
     box-sizing: border-box;
     box-sizing: border-box;
     box-sizing: border-box;
     border-bottom: 1px solid #fb998c;
   }
-  #menu ul li.last > a,
-  #menu ul li:last-child > a {
+  .menu ul li.last > a,
+  .menu ul li:last-child > a {
     border: 0;
   }
-  #menu ul li a:after {
+  .menu ul li a:after {
     display: none;
   }
-  #menu ul li a:before {
+  .menu ul li a:before {
     display: none;
   }
 }
@@ -164,7 +172,9 @@ html, body {
 }
 
 #imageicon {
-float: right;
+float: left;
+padding: 20px;
+width: 15%;
 }
 
 @media screen and (max-width: 768px) {
@@ -173,9 +183,7 @@ float: right;
     width: 100%;
     float: top;
   }
-.description .bouton {
-  right: 0%;
-}	
+
 	
 }
 	
@@ -183,9 +191,11 @@ float: right;
   border-radius: 5;
   border-radius: 5;
   border-radius: 5px;
-  font-family: Arial;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 14px;
   background: #f96e5b;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -198,6 +208,9 @@ float: right;
 
 .description .bouton {
   position: absolute; 
-  top: 65%; 
-  right: 20%;
+  margin-top: 14px;
+  margin-left: 5px;
 }
+
+
+
