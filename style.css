@@ -35,29 +35,26 @@ p {
 	margin-top: 10px;
 }
 
-
-#contenu {
-    padding:10px;
- 
+.canevas {
+    min-height:100%;
+    position:relative;
 }
 
-#contenu:after {
-  content: "";
-  display: block;
-}
-
-#piedDePage, #contenu:after{
- height: 120px;  
-}
-
-#piedDePage {
-    position: absolute;
+.contenu {
+  padding:10px;    
+  padding-bottom:120px;
+	}
+.piedDePage {
+    position:absolute;
     bottom:0;
     width:100%;
-    background:#6cf;
+    height:120px;
+    background:#DDDDEE;
+
 }
 
 #menu {
+
   background: #f96e5b;
   width: auto;
 }
@@ -284,3 +281,21 @@ text-align: left;
 }
 
 
+
+.contenuPage{
+  display: block;
+  float: left;
+}
+aside {
+  display: block;
+  float: left;
+  background-color:#FF6699;
+  position: fixed;
+  right: 0.5%;
+}
+
+.centrerfooter{
+  text-align: center;
+  padding-top: 3%;
+ /*  vertical-align: middle;*/
+}
