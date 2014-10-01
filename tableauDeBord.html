@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
-		<title>Tableau de Bord</title>
-	    <link rel="stylesheet" href="style.css">
-    </head>
-	<body>
-
-	<!-- MENU -->
+<head>
+<meta charset="utf-8">
+	<title>Tableau de Bord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div id="canevas">
         <div id="contenu">
+        	<!--  
+
+				MENU
+
+        	-->
             <nav id="menu">
                 <ul>
                     <li><a href="accueil.html">Page accueil</a></li>
@@ -18,62 +21,70 @@
                 </ul>
             </nav>
 
-	<section>
-		<h1>Menu Personnel</h1>
-		
-	<!-- Bouton de test rapide -->
-		<section  id="test">
-				<h2>Test Rapide</h2>
-				<a href="question1TestRapide.html" class="bouton">Test rapide</a>
-		</section>
-	
+            <!--
 			
-			
-	<!-- Bouton Examen -->
-						
-			<section>
-				<h2>Examen</h2>
-				<a href="questionExamen.html" class="bouton">Examen</a>
-			
-				<p>Choisissez le domaine des questions</p>
-				<input name="domaine" type="radio" required>HTML 5
-				<input name="domaine" type="radio" required>CSS 3
-				<input name="domaine" type="radio" required>Javascript
+				Contenu de la page
 
-				<p>Choisissez le nombre de questions</p>
-				<input type="text" required placeholder="Nombre de Questions">
+            -->
+			<section class="contenuPage">
+				<h2>Mon tableau de bord</h2>
+				
+				<!-- Bouton de test rapide -->
+				<section  id="test">
+						<h2>Test Rapide</h2>
+						<a href="question1TestRapide.html" class="bouton">Test rapide</a>
+				</section>
+			
+				<!-- Bouton Examen -->				
+				<section>
+					<h2>Examen</h2>
+					<a href="questionExamen.html" class="bouton">Examen</a>
+				
+					<p>Choisissez le domaine des questions</p>
+					<input name="domaine" type="radio" required>HTML 5
+					<input name="domaine" type="radio" required>CSS 3
+					<input name="domaine" type="radio" required>Javascript
+
+					<p>Choisissez le nombre de questions</p>
+					<input type="text" required placeholder="Nombre de Questions">
+				</section>	
 			</section>
-		
-			
-		</section>
 
-	<!-- Barre de statisitiques -->
-	<aside>
-		<h1>Statistiques</h1>
-		
-		<section>
-			<h2>Nombre de questions réussies</h2>
-			<p>100%</p>
-		</section>
-		<section>
-			<h2>Moyenne des examens</h2>
-			<p>100%</p>
-		</section>
-		
-		<p><a class="button">Voir détails...</a></p>
+			<!-- 
 
-		
-	</aside>
-	</section>
-		
- </div>
-	<!-- Footer de la page -->
-            <div id="piedDePage">
-                <footer>
-                    <p>Thomas BILLE</p>
-                    <p>Garing TANG</p>
-                </footer>
-            </div>
-    </div>s
-	</body>
+				Barre de statisitiques 
+
+			-->
+			<aside>
+				<h1>Statistiques</h1>
+				
+				<section>
+					<h2>Nombre de questions réussies</h2>
+					<p>100%</p>
+				</section>
+				<section>
+					<h2>Moyenne des examens</h2>
+					<p>100%</p>
+				</section>
+				
+				<p><a class="button">Voir détails...</a></p>
+
+				
+			</aside>	
+		<!-- Fin id contenu -->	
+ 		</div>
+		<!-- 
+
+			Footer de la page 
+
+		-->
+        <div id="piedDePage">
+            <footer>
+                <p>Thomas BILLE</p>
+                <p>Garing TANG</p>
+            </footer>
+        </div>
+    <!-- Fin id canevas -->	
+    </div>
+</body>
 </html>

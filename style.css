@@ -35,16 +35,16 @@ p {
 	margin-top: 10px;
 }
 
-.canevas {
+#canevas {
     min-height:100%;
     position:relative;
 }
 
-.contenu {
+#contenu {
   padding:10px;    
   padding-bottom:120px;
 	}
-.piedDePage {
+#piedDePage {
     position:absolute;
     bottom:0;
     width:100%;
