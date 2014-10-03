@@ -1,38 +1,39 @@
 *{
-    margin: 0
+  margin: 0
 }
 
 html, body {
-    height:100%;
+  height:100%;
+  background-color: #F4FEFE;
 }
 
 
 h1 {
 	min-height:100%;
-    position:relative;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
- 	color:#3687C6;
+  position:relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  color:#3687C6;
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
 
 h2 { 
 	min-height:100%;
-    position:relative;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
- 	color:#7b7979;
+  position:relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color:#7b7979;
 	margin-top: 15px;
 }
 
 p {
-    min-height:100%;
-    position:relative;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-	color:#888888;  
-	margin-top: 10px;
+  min-height:100%;
+  position:relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color:#888888;  
+  margin-top: 10px;
 }
 
 #canevas {
@@ -43,18 +44,25 @@ p {
 #contenu {
   padding:10px;    
   padding-bottom:120px;
+
 	}
 #piedDePage {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:120px;
-    background:#DDDDEE;
+  clear:both;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+  background:#CECECE;
 
 }
 
-#menu {
 
+/*
+
+  Menu
+
+*/
+#menu {
   background: #f96e5b;
   width: auto;
 }
@@ -101,6 +109,7 @@ p {
   transition: color .25s;
   transition: color .25s;
 }
+
 #menu ul li a:hover {
   color: #475673;
 }
@@ -177,7 +186,6 @@ p {
 
 
 /* Image page d'accueil */
-
 #imagequiz {
 	position: relative;
     width: 50%;
@@ -285,13 +293,35 @@ text-align: left;
 .contenuPage{
   display: block;
   float: left;
+  padding-right: 60%;
+}
+@media screen and (max-width: 768px) {
+  .contenuPage{
+    padding-right:70%;
+  }
 }
 aside {
   display: block;
   float: left;
-  background-color:#FF6699;
+  background-color:#6C7B92;
   position: fixed;
-  right: 0.5%;
+  right: 0%;
+  border-radius: 10px 0 0 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    position: relative;
+    width: 100%;
+    float: bottom;
+  }
+}
+
+.contenuPage > aside{
+  
 }
 
 .centrerfooter{
