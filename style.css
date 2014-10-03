@@ -36,9 +36,10 @@ p {
   margin-top: 10px;
 }
 
+
+/* Enlever (test):
 #canevas {
     min-height:100%;
-    position:relative;
 }
 
 #contenu {
@@ -46,6 +47,9 @@ p {
   padding-bottom:120px;
 
 	}
+*/
+
+
 #piedDePage {
   clear:both;
   position:absolute;
@@ -188,14 +192,8 @@ p {
 /* Image page d'accueil */
 #imagequiz {
 	position: relative;
-    width: 50%;
+    width: 98%;
     float: left;
-}
-
-#imageicon {
-float: left;
-padding: 20px;
-width: 15%;
 }
 
 @media screen and (max-width: 768px) {
@@ -204,6 +202,28 @@ width: 15%;
     width: 100%;
     float: top;
   }
+  .contenuPageAccueil {
+	flex-direction: column
+  }
+}
+
+
+/* Page d'accueil avec boites flexibles */
+
+.contenuPageAccueil {
+	display: flex;
+}
+
+.box {
+	flex: 1;
+}
+
+
+/*Image page Instructions */
+#imageicon {
+float: left;
+padding: 20px;
+width: 15%;
 }
 
 
@@ -230,6 +250,12 @@ width: 15%;
 #bouton-accueil:hover {
   background: #fb998c;
   text-decoration: none;
+}
+
+/* Description page d'accueil */
+#description {
+	display: block;
+	padding-left:10px;
 }
 
 
@@ -284,12 +310,11 @@ background-color: #DDDDDD;
 padding-top: 5px;
 padding-bottom: 50px;
 padding-left: 10px;
-width: 100%;
+width: 50%;
 font-size: 12pt;
 color: #888888;
 text-align: left;
 }
-
 
 
 .contenuPage{
@@ -331,6 +356,3 @@ aside {
   padding-top: 3%;
  /*  vertical-align: middle;*/
 }
-
-
-
