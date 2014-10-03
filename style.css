@@ -185,26 +185,16 @@ p {
 }
 
 
-/* Image page d'accueil */
-#imagequiz {
-	position: relative;
-    width: 50%;
-    float: left;
+/* Page d'accueil - Boites flexibles */
+.wrapper {
+	display:flex;
 }
 
-#imageicon {
-float: left;
-padding: 20px;
-width: 15%;
+.box {
+	flex:1;
 }
 
-@media screen and (max-width: 768px) {
-  #imagequiz {
-    position: relative;
-    width: 100%;
-    float: top;
-  }
-}
+
 
 /* Bouton accueil */ 
 
@@ -282,7 +272,7 @@ background-color: #DDDDDD;
 padding-top: 5px;
 padding-bottom: 50px;
 padding-left: 10px;
-width: 50%;
+width: 100%;
 font-size: 12pt;
 color: #888888;
 text-align: left;
@@ -329,3 +319,6 @@ aside {
   padding-top: 3%;
  /*  vertical-align: middle;*/
 }
+
+
+
