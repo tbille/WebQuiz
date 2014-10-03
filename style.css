@@ -185,13 +185,25 @@ p {
 }
 
 
-/* Page d'accueil - Boites flexibles */
-.wrapper {
-	display:flex;
+/* Image page d'accueil */
+#imagequiz {
+	position: relative;
+    width: 50%;
+    float: left;
 }
 
-.box {
-	flex:1;
+#imageicon {
+float: left;
+padding: 20px;
+width: 15%;
+}
+
+@media screen and (max-width: 768px) {
+  #imagequiz {
+    position: relative;
+    width: 100%;
+    float: top;
+  }
 }
 
 
