@@ -222,6 +222,7 @@ p {
 #imageicon {
 float: left;
 padding: 20px;
+margin-right: 10px;
 width: 15%;
 }
 
@@ -289,6 +290,11 @@ width: 15%;
   margin-left: 25px;
  }
 
+/* Bouton page Instructions */
+
+.contenuPageInstructions .bouton {
+	top: 40px;
+}
 
 /* Bouton */ 
 
@@ -350,14 +356,44 @@ border-radius: 0px 10px 10px 0;
 .contenuPageInstructions{
   display: block;
   float: left;
-  padding-right: 40%;
-}
-@media screen and (max-width: 768px) {
-  .contenuPage{
-    padding-right:70%;
-  }
+  padding-right: 35%;
 }
 
+@media screen and (max-width: 768px) {
+  .contenuPage{
+    padding-right: 70%;
+	 }
+	
+  .contenuPageInstructions{
+  display: block;
+  float: left;
+  width: 100%;
+  padding-bottom: 50px;
+  }
+
+.contenuPageInstructions .bouton{
+  margin-left: 25px;
+  left: 137px;
+
+}
+}
+
+
+.contenuPageInstructions h1{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  color: #3687c6;
+}
+
+.contenuPageInstructions h2 {
+	margin-top: 15px;
+	color: #7b7979;
+}
+
+.contenuPageInstructions p {
+	color: #888888;
+}
 
 /*Contenu Tableau de bord*/
 
