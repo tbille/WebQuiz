@@ -19,7 +19,6 @@ h1 {
 
 h2 { 
   min-height:100%;
-  position:relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
@@ -32,29 +31,15 @@ p {
   margin-top: 10px; 
 }
 
-
-
-#canevas {
-  height: 100%;
-}
-
 #contenu{
-
-
-  display: block;
-  position: relative;
+  display: table;
+  position: relative; 
   width: 100%;
-  height:80%; 
 }
 
 #piedDePage {
 
   display: block;
-  position:relative;
-  float: bottom;
-  bottom: 0;
-  width:100%;
-  height:20%;
   margin-top: 10px;
   background:#CECECE;
   color: #475673;
@@ -68,7 +53,6 @@ p {
 */
 #menu {
   background: #f96e5b;
-  width: auto;
 }
 #menu ul {
   list-style: none;
@@ -191,7 +175,7 @@ p {
 
 /* Image page d'accueil */
 #imagequiz {
-	position: relative;
+  position: relative;
     width: 98%;
     float: left;
 }
@@ -203,19 +187,23 @@ p {
     float: top;
   }
   .contenuPageAccueil {
-	flex-direction: column
-	  }
+  flex-direction: column
+    }
 }
 
 
 /* Boites flexibles */
 
 .contenuPageAccueil {
-	display: flex;
+  display: flex;
 }
 
 .box {
-	flex: 1;
+  flex: 1;
+}
+
+#examen{
+  padding-left: 25px;
 }
 
 
@@ -281,8 +269,6 @@ width: 15%;
 
 
 #examen .bouton {
-  border-radius: 5;
-  border-radius: 5;
   border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
@@ -292,9 +278,6 @@ width: 15%;
   background: #f96e5b;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  position: relative;
-  top: 217px;
-  margin-left: 25px;
  }
 
 #examen .bouton:hover {
@@ -305,7 +288,7 @@ width: 15%;
 /* Bouton page Instructions */
 
 .contenuPageInstructions .bouton {
-	top: 40px;
+  top: 40px;
 }
 
 /* Bouton */ 
@@ -349,36 +332,36 @@ border-radius: 0px 10px 10px 0;
 /* Contenu Accueil*/
 
 .contenuPageAccueil h1 {
-	margin-top: 30px;
+  margin-top: 30px;
     margin-bottom: 20px;
-	color: #3687c6;
+  color: #3687c6;
 }
 
 .contenuPageAccueil h2 {
-	margin-top: 15px;
-	color: #7b7979;
+  margin-top: 15px;
+  color: #7b7979;
 }
 
 .contenuPageAccueil p {
-	color: #888888;
+  color: #888888;
 }
 
 @media screen and (max-width: 768px) {
 .contenuPageAccueil h1 {
-	margin-top: 30px;
-	margin-left: 25px;
+  margin-top: 30px;
+  margin-left: 25px;
 }
 
 .contenuPageAccueil h2 {
-	margin-left: 25px;
+  margin-left: 25px;
 }
 
 .contenuPageAccueil p {
-	margin-left: 25px;
+  margin-left: 25px;
 }
-	
+  
 #bouton-accueil {
-	margin-left: 25px;
+  margin-left: 25px;
 }
 }
 
@@ -393,8 +376,8 @@ border-radius: 0px 10px 10px 0;
 @media screen and (max-width: 768px) {
   .contenuPage{
     padding-right: 70%;
-	 }
-	
+   }
+  
   .contenuPageInstructions{
   display: block;
   float: left;
@@ -418,12 +401,12 @@ border-radius: 0px 10px 10px 0;
 }
 
 .contenuPageInstructions h2 {
-	margin-top: 15px;
-	color: #7b7979;
+  margin-top: 15px;
+  color: #7b7979;
 }
 
 .contenuPageInstructions p {
-	color: #888888;
+  color: #888888;
 }
 
 
@@ -444,15 +427,15 @@ border-radius: 0px 10px 10px 0;
 }
 
 .contenuPageQuestions h2 {
-	margin-top: 15px;
-	margin-left: 25px;
-	color: #7b7979;
+  margin-top: 15px;
+  margin-left: 25px;
+  color: #7b7979;
 }
 
 .contenuPageQuestions p {
-	margin-bottom: 10px;
-	color: #888888;
-	
+  margin-bottom: 10px;
+  color: #888888;
+  
 }
 
 fieldset {
@@ -468,7 +451,7 @@ background-color: #e0edf7;
 }
 
 .contenuPageQuestions .bouton {
-	margin-left: 25px;
+  margin-left: 25px;
 }
 
 
@@ -487,20 +470,20 @@ background-color: #e0edf7;
 }
 
 .contenuPageResultat h2 {
-	margin-top: 15px;
-	margin-left: 25px;
-	color: #7b7979;
+  margin-top: 15px;
+  margin-left: 25px;
+  color: #7b7979;
 }
 
 .contenuPageResultat p {
-	margin-bottom: 10px;
-	margin-left: 25px;
-	color: #888888;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  color: #888888;
 }
 
 .contenuPageResultat .bouton {
-	margin-left: 25px;
-	}
+  margin-left: 25px;
+  }
 
 
 /*Contenu Tableau de bord*/
@@ -528,7 +511,6 @@ background-color: #e0edf7;
 
 #examen h2{
   margin-top: 30px;
-  margin-left: 25px;
   color: #7b7979;
 }
 
@@ -539,23 +521,17 @@ background-color: #e0edf7;
 }
 
 #test p{
-	margin-left: 25px;
+  margin-left: 25px;
 }
 
 label {
-	color: #888888;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+  color: #888888;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
-
-form {
-	margin-left: 25px;
-}
-
 
 aside {
   display: block;
-  float: left;
   background-color:#6C7B92;
   position: fixed;
   right: 0%;
@@ -603,13 +579,13 @@ aside h2 {
 
 /*Checklist */
 .a-form {
-	list-style: none; 
-	margin-left: 5px; 
-	padding: 5px;}
+  list-style: none; 
+  margin-left: 5px; 
+  padding: 5px;}
 
 .a-form input {
-	display:inline-block; 
-	margin-right: 1em;}
+  display:inline-block; 
+  margin-right: 1em;}
 
 
 
