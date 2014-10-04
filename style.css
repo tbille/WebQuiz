@@ -5,6 +5,8 @@
 html, body {
   height:100%;
   background-color: #F4FEFE;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -35,11 +37,12 @@ p {
 }
 
 
-/* Enlever (test):
+
 #canevas {
     min-height:100%;
 }
 
+/* Enlever (test)
 #contenu {
   padding:10px;    
   padding-bottom:120px;
@@ -272,6 +275,11 @@ width: 15%;
   margin-left: 25px;
  }
 
+#test .bouton:hover {
+  background: #fb998c;
+  text-decoration: none;
+}
+
 
 #examen .bouton {
   border-radius: 5;
@@ -289,6 +297,11 @@ width: 15%;
   top: 217px;
   margin-left: 25px;
  }
+
+#examen .bouton:hover {
+  background: #fb998c;
+  text-decoration: none;
+}
 
 /* Bouton page Instructions */
 
@@ -351,6 +364,25 @@ border-radius: 0px 10px 10px 0;
 	color: #888888;
 }
 
+@media screen and (max-width: 768px) {
+.contenuPageAccueil h1 {
+	margin-top: 30px;
+	margin-left: 25px;
+}
+
+.contenuPageAccueil h2 {
+	margin-left: 25px;
+}
+
+.contenuPageAccueil p {
+	margin-left: 25px;
+}
+	
+#bouton-accueil {
+	margin-left: 25px;
+}
+}
+
 
 /*Contenu Instruction*/
 .contenuPageInstructions{
@@ -374,8 +406,8 @@ border-radius: 0px 10px 10px 0;
 .contenuPageInstructions .bouton{
   margin-left: 25px;
   left: 137px;
-
 }
+
 }
 
 
@@ -428,7 +460,7 @@ fieldset {
 border-radius: 8px;
 border-radius: 8px;
 border-radius: 8px;
-width: 60%;
+width: 63%;
 margin-top: 10px;
 margin-left: 25px;
 margin-bottom: 20px;
@@ -440,6 +472,36 @@ background-color: #e0edf7;
 	margin-left: 25px;
 }
 
+
+/* Contenu Resultat */
+
+.contenuPageResultat{
+  display: block;
+  float: left;
+ }
+
+.contenuPageResultat h1{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  color: #3687c6;
+}
+
+.contenuPageResultat h2 {
+	margin-top: 15px;
+	margin-left: 25px;
+	color: #7b7979;
+}
+
+.contenuPageResultat p {
+	margin-bottom: 10px;
+	margin-left: 25px;
+	color: #888888;
+}
+
+.contenuPageResultat .bouton {
+	margin-left: 25px;
+	}
 
 
 /*Contenu Tableau de bord*/
