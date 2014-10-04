@@ -9,22 +9,21 @@ html, body {
 
 
 h1 {
-	min-height:100%;
+  min-height:100%;
   position:relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
-  color:#3687C6;
-	margin-top: 30px;
-	margin-bottom: 20px;
+  /*
+  margin-top: 30px;
+  margin-bottom: 20px; */
 }
 
 h2 { 
-	min-height:100%;
+  min-height:100%;
   position:relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  color:#7b7979;
-	margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 p {
@@ -32,8 +31,7 @@ p {
   position:relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color:#888888;  
-  margin-top: 10px;
+  margin-top: 10px; 
 }
 
 
@@ -189,6 +187,22 @@ p {
 }
 
 
+/* Texte page d'accueil */
+.contenuPageAccueil h1 {
+	margin-top: 30px;
+    margin-bottom: 20px;
+	color: #3687c6;
+}
+
+.contenuPageAccueil h2 {
+	margin-top: 15px;
+	color: #7b7979;
+}
+
+.contenuPageAccueil p {
+	color: #888888;
+}
+
 /* Image page d'accueil */
 #imagequiz {
 	position: relative;
@@ -204,7 +218,7 @@ p {
   }
   .contenuPageAccueil {
 	flex-direction: column
-  }
+	  }
 }
 
 
@@ -243,7 +257,7 @@ width: 15%;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   position: relative;
-  top: 15px;
+  top: 20px;
   margin-botton: 15px;
  }
 
@@ -252,14 +266,8 @@ width: 15%;
   text-decoration: none;
 }
 
-/* Description page d'accueil */
-#description {
-	display: block;
-	padding-left:10px;
-}
 
-
-/* Bouton test */ 
+/* Bouton test rapide */ 
 
 #test .bouton {
   border-radius: 5;
@@ -304,7 +312,7 @@ width: 15%;
 }
 
 
-/* Test Encadrement */
+/* Test rapide Encadrement */
 #test {
 background-color: #DDDDDD;
 padding-top: 5px;
@@ -337,6 +345,25 @@ aside {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #ffffff;
+  width: 30%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+aside p {
+  color: #ffffff
+}
+
+aside h1 {
+  color: #fb998c;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+aside h2 {
+  color: #D6E0E9;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -346,6 +373,12 @@ aside {
     float: bottom;
   }
 }
+
+/* Page tableau de bord avec boites flexibles */
+
+
+
+
 
 .contenuPage > aside{
   
