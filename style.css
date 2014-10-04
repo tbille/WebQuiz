@@ -58,7 +58,7 @@ p {
   width:100%;
   height:120px;
   background:#CECECE;
-
+  color: #475673;
 }
 
 
@@ -603,7 +603,7 @@ aside h2 {
 .centrerfooter{
   text-align: center;
   padding-top: 3%;
- /*  vertical-align: middle;*/
+  /*vertical-align: middle;*/
 }
 
 
