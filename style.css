@@ -35,24 +35,27 @@ p {
 
 
 #canevas {
-    min-height:100%;
+  height: 100%;
 }
 
-/* Enlever pour tester
-#contenu {
-  padding:10px;    
-  padding-bottom:120px;
+#contenu{
 
-	}
-*/
 
+  display: block;
+  position: relative;
+  width: 100%;
+  height:80%; 
+}
 
 #piedDePage {
-  clear:both;
-  position:absolute;
-  bottom:0;
+
+  display: block;
+  position:relative;
+  float: bottom;
+  bottom: 0;
   width:100%;
-  height:120px;
+  height:20%;
+  margin-top: 10px;
   background:#CECECE;
   color: #475673;
 }
@@ -584,17 +587,11 @@ aside h2 {
 @media screen and (max-width: 768px) {
   aside {
     position: relative;
-    width: 100%;
+    width: 96%;
+    margin-right: 10%;
     float: bottom;
-	margin-left: 65%;
+    border-radius: 10px 10px 10px 10px;
   }
-}
-
-
-
-
-.contenuPage > aside{
-  
 }
 
 .centrerfooter{
