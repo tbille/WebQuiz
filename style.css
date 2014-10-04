@@ -222,7 +222,7 @@ p {
 }
 
 
-/* Page d'accueil avec boites flexibles */
+/* Boites flexibles */
 
 .contenuPageAccueil {
 	display: flex;
@@ -231,6 +231,7 @@ p {
 .box {
 	flex: 1;
 }
+
 
 
 /*Image page Instructions */
@@ -318,23 +319,30 @@ background-color: #DDDDDD;
 padding-top: 5px;
 padding-bottom: 50px;
 padding-left: 10px;
-width: 50%;
 font-size: 12pt;
 color: #888888;
 text-align: left;
 }
 
 
-.contenuPage{
+/* Contenus des pages*/
+.contenuPageInstructions{
   display: block;
   float: left;
-  padding-right: 60%;
+  padding-right: 40%;
 }
 @media screen and (max-width: 768px) {
   .contenuPage{
     padding-right:70%;
   }
 }
+
+.contenuPageTDB {
+  display: block;
+  float: left;
+  padding-right: 40%;
+}
+
 aside {
   display: block;
   float: left;
@@ -373,8 +381,6 @@ aside h2 {
     float: bottom;
   }
 }
-
-/* Page tableau de bord avec boites flexibles */
 
 
 
