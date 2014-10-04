@@ -342,9 +342,9 @@ padding-top: 5px;
 padding-bottom: 77px;
 padding-left: 3px;
 border-radius: 0px 10px 10px 0;
-
-
 }
+
+
 
 
 /* Contenu Accueil*/
@@ -590,6 +590,7 @@ aside h2 {
     position: relative;
     width: 100%;
     float: bottom;
+	margin-left: 65%;
   }
 }
 
