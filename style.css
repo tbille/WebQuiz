@@ -267,7 +267,7 @@ width: 15%;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   position: relative;
-  top: 30px;
+  top: 20px;
   margin-left: 25px;
  }
 
@@ -285,7 +285,7 @@ width: 15%;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   position: relative;
-  top: 150px;
+  top: 217px;
   margin-left: 25px;
  }
 
@@ -315,17 +315,18 @@ width: 15%;
 }
 
 
-/* Test rapide Encadrement
+/*Test rapide Encadrement */
 #test {
-background-color: #DDDDDD;
+display: block;
+background-color: #e7e7f8;
 padding-top: 5px;
-padding-bottom: 50px;
-padding-left: 10px;
-font-size: 12pt;
-color: #888888;
-text-align: left;
+padding-bottom: 77px;
+padding-left: 3px;
+border-radius: 0px 10px 10px 0;
+
+
 }
-*/
+
 
 /* Contenu Accueil*/
 
@@ -359,11 +360,14 @@ text-align: left;
 
 
 /*Contenu Tableau de bord*/
+
 .contenuPageTDB {
-  display: block;
+  /*display: block;*/
   float: left;
-  padding-right: 40%;
+  /*padding-right: 10%;*/
+  width: 65%;
 }
+
 
 .contenuPageTDB h1 {
   margin-top: 30px;
@@ -379,19 +383,24 @@ text-align: left;
 }
 
 #examen h2{
-  margin-top: 80px;
-  margin-bottom: 10px;
+  margin-top: 30px;
   margin-left: 25px;
   color: #7b7979;
 }
 
 .contenuPageTDB p {
-  margin-left: 25px;
   color: #888888;
+  margin-bottom: 10px;
+    
+}
+
+#test p{
+	margin-left: 25px;
 }
 
 label {
 	color: #888888;
+	font-family: 'Open Sans', sans-serif;
 }
 
 form {
@@ -441,7 +450,6 @@ aside h2 {
 
 
 
-
 .contenuPage > aside{
   
 }
@@ -451,3 +459,16 @@ aside h2 {
   padding-top: 3%;
  /*  vertical-align: middle;*/
 }
+
+
+/*Checklist */
+#a-form {
+	list-style: none; 
+	margin-left: 5px; 
+	padding: 5px;}
+
+/*#a-form li {}*/
+
+#a-form input {
+	display:inline-block; 
+	margin-right: 1em;}
