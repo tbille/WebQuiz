@@ -3,9 +3,7 @@
 }
 
 html, body {
-  height:100%;  
   background-color: #F4FEFE;
-  margin: 0;
   padding: 0;
 }
 
@@ -38,7 +36,8 @@ p {
 }
 
 #piedDePage {
-
+  position: absolute;
+  bottom:0;
   display: block;
   margin-top: 10px;
   background:#CECECE;
