@@ -48,18 +48,28 @@
 
 				Barre de statisitiques 
 
-			-->
+			-->			
 			<aside>
 				<h1>Statistiques</h1>
+				
 				<section>
-					<h2>Note courante</h2>
+					<h2>Note cumulative test rapide</h2>
 					<p>100%</p>
 				</section>
-			
+				<section>
+					<h2>Note moyenne des examen</h2>
+					<p>100%</p>
+				</section>
+				
+				<!-- ajout javascript dans lien -->
+				<p></p><a href="#modal-one" class="btn btn-big">Voir détails</a></p>
+				
+
+				
 			</aside>
-			
-	 	<!-- Fin id contenu -->	
- 		</div>
+		</div>
+		<!-- Fin id contenu -->	
+		
 
 		<!-- 
 
@@ -67,12 +77,43 @@
 
 		-->
         <div id="piedDePage">
-            <footer>
+            <footer class="centrerfooter">
                 <p>Thomas BILLE</p>
                 <p>Garing TANG</p>
             </footer>
         </div>
     <!-- Fin id canevas -->	
     </div>
-	</body>
+	
+	<!-- Modal -->
+	<div class="modal" id="modal-one" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-header">
+			  <h2>Résultats détaillés des examens</h2>
+			  <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
+			</div>
+			<div class="modal-body">
+			  <p>
+				<ul>
+					<li>Examen 1 (HTML): 20 / 20</li>
+					<li>Examen 2 (CSS): 10 / 20</li>
+					<li>Examen 3 (HTML): 15 / 20</li>
+					<li>Examen 4 (Javascript): 19 / 20</li>
+					<li>Examen 5 (HTML): 20 / 20</li>
+					<li>Examen 6 (CSS): 10 / 20</li>
+					<li>Examen 7 (HTML): 15 / 20</li>
+					<li>Examen 8 (Javascript): 19 / 20</li>
+					<li>Examen 9 (Javascript): 19 / 20</li>
+					<li>Examen 10 (HTML): 20 / 20</li>
+				</ul>
+			</p>
+			</div>
+			<div class="modal-footer">
+			  <a href="#close" class="btn">Fermer</a>  <!--CHANGED TO "#close"-->
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+
+</body>
 </html>

@@ -33,6 +33,7 @@ p {
   display: table;
   position: relative; 
   width: 100%;
+  overflow: auto;
 }
 
 #piedDePage {
@@ -42,8 +43,22 @@ p {
   margin-top: 10px;
   background:#CECECE;
   color: #475673;
+  width:100%;
 }
 
+#piedDePageTDB {
+  position: absolute;
+  margin-top: 50px;
+  background:#CECECE;
+  color: #475673;
+  width:100%;
+}
+
+#nbQuestions{
+
+  margin-top: 10px;
+
+}
 
 /*
 
@@ -277,6 +292,7 @@ width: 15%;
   background: #f96e5b;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  top: 0px;
  }
 
 #examen .bouton:hover {
@@ -561,11 +577,11 @@ aside h2 {
 
 @media screen and (max-width: 768px) {
   aside {
-    position: relative;
-    width: 96%;
-    margin-right: 10%;
-    float: bottom;
+    clear: both;
+    position: inherit;
+    bottom:-30px;
     border-radius: 10px 10px 10px 10px;
+    width: 96%;
   }
 }
 
