@@ -17,6 +17,111 @@ var question10 = new Array(10, 1,'METTRE QUESTION', 'REPONSE1','REPONSE2','REPON
 
 var tableauQuestions = new Array(question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) ;
 
+var tableauQuestions = [
+
+{
+	id:1,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:2,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:3,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:4,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:5,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:6,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:7,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:8,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:9,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+{
+	id:10,
+	domaine:1,
+	question:'blalbal',
+	reponse1:'',
+	reponse2:'',
+	reponse3:'',
+	reponse4:'',
+	bonneReponse:1
+},
+];
+
+
 /*
 	DOMAINES
 */
@@ -27,3 +132,12 @@ var css = new Array(2,'css');
 var js = new Array(3,'javascript');
 
 var tableauDomaines = new Array(html,css,js);
+
+
+ var getNameDomaineFromID = function (id){
+	var i = 0;
+	while($.inArray(id, tableauDomaines[i])){
+		i++;
+	}
+	return tableauDomaines[i];
+}
