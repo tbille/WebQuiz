@@ -4,20 +4,126 @@
    <meta charset="utf-8">
    <title>  ACCUEIL </title>
     <link rel="stylesheet" href="style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="bdd.js"></script>
 
 
     <script type="text/javascript">
     	var test = getNameDomaineFromID(1);
     	alert(test[1]);
-    </script>
+    </script> -->
+	
+
+	<script>
+
+		function verifyForm(form) {
+    var userdomaine = form.domaine.value;
+    var userquestion = form.question.value;
+    var success = 1;
+    if (!userdomaine) {
+        document.getElementById("domaineMsg").style.display = "block";
+        /* form.domaine.style.backgroundColor = "#f7ddda"; */
+        form.domaine.style.border = "3px #f96e5b solid";
+        success = 0;
+    }
+    else {
+        form.domaine.style.backgroundColor = "";
+        form.domaine.style.border = "";
+        document.getElementById("domaineMsg").style.display = "none";
+    }
+    if (!userquestion) {
+        document.getElementById("questionMsg").style.display = "block";
+        /*form.question.style.backgroundColor = "yellow"; */
+        form.question.style.border = "3px #f96e5b solid";
+        success = 0;
+    }
+    else {
+        form.question.style.backgroundColor = "";
+        form.question.style.border = "";
+        document.getElementById("questionMsg").style.display = "none";
+    }
+    if(!success) {
+       /* alert("The form is incomplete.  Please read the error message(s)."); */
+        return false;
+    }
+    else {
+   /*     alert("The form was submitted succesfully!"); */
+        return true;
+    }
+}
+	
+</script>
+	
 </head>
 <body>
 
 
-    <a href="#" onclick="alert('Bonjour !');">lien</a>
+   <!-- <a href="#" onclick="alert('Bonjour !');">lien</a> -->
 
+<form method="POST" onSubmit="return verifyForm(this);">
+<!-- Username<input type="text" name="domaine"><div id="domaineMsg" style="display:none;"><span style="color:#f96e5b;">Veuillez choisir le domaine des questions.</span></div>  -->
+
+		<p>Choisissez le domaine des questions :</p>
+						<ul class="a-form">
+							<li><label for="html"><input type="checkbox" name="domaine"/> HTML5</label></li>
+							<li><label for="css"><input type="checkbox" name="domaine"/> CSS3</label></li>
+                        	<li><label for="js"><input type="checkbox" name="domaine"/> Javascript</label></li>
+							<div id="domaineMsg" ><span style="color:#f96e5b;"></span></div>
+							<div id="domaineMsg" ><span style="color:#f96e5b;"></span></div>
+						</ul>
+<br>
+<p>Choisissez le nombre de questions :</p>
+<input id="nbQuestions" type="number" name="question" min="1" max="10"><div id="questionMsg" style="display:none;"><span style="color:#f96e5b;">Veuillez choisir le nombre de questions.</span></div>        
+<br>
+<input type="submit" value="Submit" id="monBouton">
+</form>
+	
+
+<!--	<form method="POST" action="./questionExamen.html" id="formExam">
+						<p>Choisissez le domaine des questions :</p>
+						<ul class="a-form">
+							<li><label for="html"><input type="checkbox" name="domaine"/> HTML5</label></li>
+							<li><label for="css"><input type="checkbox" name="domaine"/> CSS3</label></li>
+                        	<li><label for="js"><input type="checkbox" name="domaine"/> Javascript</label></li>
+							<div id="domaineMsg" style="display:none;"><span style="color:#f96e5b;">Veuillez choisir le domaine des questions.</span></div>
+						</ul>	
+						<p>Choisissez le nombre de questions :</p>
+						<input id="nbQuestions"type="text" required placeholder="Nombre de Questions">
+						<a href="questionExamen.html" class="bouton">Examen</a>
+					</form>
+-->
+	<script>
+		$("monBouton").onclick(function(){
+			$("#domaineMsg").text("Veuillez choisir le domaine des questions.");
+			 if (!checked){
+		$("#domaineMsg").text("Veuillez choisir le domaine des questions.");
+	};
+	else{
+        return false;
+    }
+			
+			
+		};
+		
+		
+							 
+/*	
+
+$("#formExam").submit(function(){
+    var checked = $("#formExam input:checked").length > 0;
+    if (!checked){
+		$("#domaineMsg").text("Veuillez choisir le domaine des questions.");
+	};
+	else{
+        return false;
+    }
+}
+*/
+
+
+	</script>
 
 </body>
 </html>
+
+
