@@ -34,19 +34,20 @@
 			<section class="contenuPageQuestions">
 				<h1>Test Rapide</h1>
 				<section>
-					<h2 id="numQuestion"></h2>
+					<h2 id="numQuestion">Question</h2>
 					<fieldset>
 						<p id="question"></p>
 						<ul class="a-form">
-							<li><input name="r1" type="radio" ><label for="1" id="rep1"></label></li>
-							<li><input name="r1" type="radio" ><label for="1" id="rep2"></label></li>
-							<li><input name="r1" type="radio" ><label for="1" id="rep3"></label></li>
-							<li><input name="r1" type="radio" ><label for="1" id="rep4"></label></li>
+							<li><input name="r1" type="radio" id="inp1"><label for="1" id="rep1"></label></li>
+							<li><input name="r1" type="radio" id="inp2"><label for="1" id="rep2"></label></li>
+							<li><input name="r1" type="radio" id="inp3"><label for="1" id="rep3"></label></li>
+							<li><input name="r1" type="radio" id="inp4"><label for="1" id="rep4"></label></li>
 						</ul>
 					</fieldset>
 				
 					<a href="tableauDeBord.html" class="bouton">Retour au menu</a>
-					<a class="bouton" id="questionSuivante">Question Suivante</a>
+					<a href="#" class="bouton" id="correction">Corriger</a>
+					<a class="bouton" id="questionSuivante" href="#">Question Suivante</a>
 				</section>
 			</section>
 			<!-- 
@@ -127,10 +128,13 @@
 
     	$( document ).ready(function() {
 			// Handler for .ready() called.
-			i=0;
 			monTableauQuestions = getAllQuestions();
+
+			i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+
+			
 			$("#question").text(monTableauQuestions[i].question);
-			$("#numQuestion").text("Question " + (i+1));
+			//$("#numQuestion").text("Question " + (i+1));
 
 			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
 				$("#rep"+(j+1)).text('');
@@ -140,22 +144,31 @@
 
 
     	$("#questionSuivante").click( function(){
-    		i++;
+    		i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
     		if(i<monTableauQuestions.length){
     			$("#question").text(monTableauQuestions[i].question);
-    			$("#numQuestion").text("Question " + (i+1));
+    			//$("#numQuestion").text("Question " + (i+1));
 
     			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
     				$("#rep"+(j+1)).text('');
     				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
     			}
-
-    			if(i==(monTableauQuestions.length-1)){
-    				$("#questionSuivante").text("Fin test");
-    			}
     		}
     	});
 
+    	$("#correction").click( function(){
+    		
+    		if($("input:radio[name='r1']").is(":checked")){ 
+    			alert("it's checked"); 
+
+    			alert($("input:radio[name='r1']:checked").parent().text());
+    		}
+			else{
+				alert("it's not checked");
+			}
+
+
+    	});
 
 
     </script>
