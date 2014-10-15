@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 	<title>Question 1 Test Rapide</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bdd.js"></script>
+
+
+
 </head>
 <body>
     <div id="canevas">
@@ -28,19 +34,19 @@
 			<section class="contenuPageQuestions">
 				<h1>Test Rapide</h1>
 				<section>
-					<h2>Question 1</h2>
+					<h2 id="numQuestion"></h2>
 					<fieldset>
-						<p>Quel est le doctype d'un document HTML5?</p>
+						<p id="question"></p>
 						<ul class="a-form">
-							<li><label for="1"><input name="r1" type="radio">réponse 1</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 2</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 3</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 4</label></li>
+							<li><input name="r1" type="radio" ><label for="1" id="rep1"></label></li>
+							<li><input name="r1" type="radio" ><label for="1" id="rep2"></label></li>
+							<li><input name="r1" type="radio" ><label for="1" id="rep3"></label></li>
+							<li><input name="r1" type="radio" ><label for="1" id="rep4"></label></li>
 						</ul>
 					</fieldset>
 				
 					<a href="tableauDeBord.html" class="bouton">Retour au menu</a>
-					<a href="question2TestRapide.html" class="bouton">Question Suivante</a>
+					<a class="bouton" id="questionSuivante">Question Suivante</a>
 				</section>
 			</section>
 			<!-- 
@@ -113,6 +119,46 @@
 		</div>
 	</div>
 	<!-- /Modal -->
+
+
+    <script type="text/javascript">
+    	var i;
+    	var tableauQuestions;
+
+    	$( document ).ready(function() {
+			// Handler for .ready() called.
+			i=0;
+			monTableauQuestions = getAllQuestions();
+			$("#question").text(monTableauQuestions[i].question);
+			$("#numQuestion").text("Question " + (i+1));
+
+			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
+				$("#rep"+(j+1)).text('');
+				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+			}
+		});
+
+
+    	$("#questionSuivante").click( function(){
+    		i++;
+    		if(i<monTableauQuestions.length){
+    			$("#question").text(monTableauQuestions[i].question);
+    			$("#numQuestion").text("Question " + (i+1));
+
+    			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
+    				$("#rep"+(j+1)).text('');
+    				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+    			}
+
+    			if(i==(monTableauQuestions.length-1)){
+    				$("#questionSuivante").text("Fin test");
+    			}
+    		}
+    	});
+
+
+
+    </script>
 
 </body>
 </html>
