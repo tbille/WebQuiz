@@ -99,7 +99,7 @@ var tableauQuestions = [
 		reponse2:'<java>',
 		reponse3:'<javascript>',
 		reponse4:'<script>'
-	}
+	},
 	bonneReponse:4
 },
 {
