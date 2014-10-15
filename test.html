@@ -9,8 +9,10 @@
 
 
     <script type="text/javascript">
-    	var test = getNameDomaineFromID(1);
-    	alert(test[1]);
+    	var test = getQuestionsFromDomaine(3);
+    	for(i=0;i<test.length;i++){
+    		alert(test[i].question);
+    	}
     </script>
 </head>
 <body>
