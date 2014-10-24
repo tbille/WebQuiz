@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 	<title>Tableau de Bord</title>
     <link rel="stylesheet" href="src/css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="src/js/bdd.js"></script>
+	
 </head>
 <body>
     <div id="canevas" >
@@ -50,8 +53,9 @@
                         	<li><label for="js"><input type="checkbox" name="js"/> Javascript</label></li>
 						</ul>	
 						<p>Choisissez le nombre de questions :</p>
-						<input id="nbQuestions"type="text" required placeholder="Nombre de Questions">
-						<a href="questionExamen.html" class="bouton">Examen</a>
+						<input type="number" min="1" max="10"/>
+						<!-- <a href="questionExamen.html" class="bouton">Examen</a>  -->
+						<input class="bouton" a href="questionExamen.html" type="submit" value="Examen officiel" disabled/>
 					</form>
 					
 
