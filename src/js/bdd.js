@@ -188,3 +188,7 @@ var getQuestionsFromDomaine= function (tableauidDomaine){
 var getAllQuestions=function(){
 	return tableauQuestions;
 }
+
+var getNumQuestions=function(tableauidDomaine){
+	return getQuestionsFromDomaine(idDomaine).length;
+}

@@ -127,29 +127,32 @@
     	var tableauQuestions;
 
     	$( document ).ready(function() {
-			// Handler for .ready() called.
+			// je récupère toutes les questions en local
 			monTableauQuestions = getAllQuestions();
 
+			// Choix d'une question aléatoire
 			i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
 
-			
+			// affichage de la question
 			$("#question").text(monTableauQuestions[i].question);
-			//$("#numQuestion").text("Question " + (i+1));
 
+			// parcours de toutes les réponses + affichage des réponses possibles
 			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
 				$("#rep"+(j+1)).text('');
 				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
-				
 			}
 		});
 
 
+    	// on click on Question Suivante
     	$("#questionSuivante").click( function(){
+    		// récuperation d'un numéro aléatoire pour la question
     		i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
     		if(i<monTableauQuestions.length){
+    			// affichage de la question
     			$("#question").text(monTableauQuestions[i].question);
-    			//$("#numQuestion").text("Question " + (i+1));
 
+    			// parcours de toutes les questions + affichage
     			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
     				$("#rep"+(j+1)).text('');
     				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
@@ -157,16 +160,33 @@
     		}
     	});
 
-    	$("#correction").click( function(){
-    		
-    		if($("input:radio[name='r1']").is(":checked")){ 
-    			alert("it's checked"); 
 
-    			alert($("input:radio[name='r1']:checked").parent().text());
+    	// on click on correction
+    	$("#correction").click( function(){
+    		if($("input:radio[name='r1']").is(":checked")){ 
+
+    			// Controle si la réponse est bonne ( comparaison avec le text de la répons coché )
+				if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
+					alert("oh yeah !");
+
+					// ici je met le texte en vert si la réponse est bonne
+					$("input:radio[name='r1']:checked").parent().css({
+						"background-color": 'green',
+					});
+				}
+				else{
+					// ici je met le texte en rouge si la réponse est mauvaise
+					$("input:radio[name='r1']:checked").parent().css({
+						"background-color": 'red',
+					});
+				}
+    			
     		}
 			else{
 				alert("it's not checked");
 			}
+
+
 
 
     	});
