@@ -189,6 +189,11 @@ var getAllQuestions=function(){
 	return tableauQuestions;
 }
 
+/*
+	Fonction qui retourne toutes les questions du tableau le nombre de question
+	Entrée : -
+	Sortie : nombre d'éléments du tableau de question:integer
+*/
 var getNumQuestions=function(tableauidDomaine){
 	return getQuestionsFromDomaine(idDomaine).length;
 }
