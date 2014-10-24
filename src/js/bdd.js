@@ -189,6 +189,7 @@ var getAllQuestions=function(){
 	return tableauQuestions;
 }
 
+<<<<<<< HEAD
 
 
 /* TABLEAU DE BORD - CHOIX TYPE ET NB QUESTIONS */
@@ -206,3 +207,8 @@ checkboxes.click(function() {
 });
 	
 
+=======
+var getNumQuestions=function(tableauidDomaine){
+	return getQuestionsFromDomaine(idDomaine).length;
+}
+>>>>>>> c6c572908fce12175e58ce4b86f4948832b8171b
