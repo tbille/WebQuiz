@@ -160,7 +160,11 @@
 				if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
 					// ici je met le texte en vert si la réponse est bonne
 					$("input:radio[name='r1']:checked").parent().css({
-						"background-color": 'green',
+						"background-color": '#aedbae',	
+						"padding": '3px 10px',
+						"border-radius": '25px',
+						"margin-top": '1px',
+						"margin-bottom": '1px',
 					});
 				}
 				else{
@@ -169,14 +173,20 @@
 					  	if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $(this).parent().text() ){
 	    					// ici je met le texte en vert si la réponse est bonne
 							$(this).parent().css({
-								"background-color": 'green',
+								"background-color": '#aedbae',
+								"padding": '3px 10px',
+								"border-radius": '25px',
+								"margin-top": '1px',
+								"margin-bottom": '1px',
 							});
 						}
 					  });
 
 					// ici je met le texte en rouge si la réponse est mauvaise
 					$("input:radio[name='r1']:checked").parent().css({
-						"background-color": 'red',
+						"background-color": '#e89f9f',
+						"padding": '3px 10px',
+						"border-radius": '25px',	
 					});
 				}
     			
