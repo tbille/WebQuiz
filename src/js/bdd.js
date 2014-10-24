@@ -189,26 +189,7 @@ var getAllQuestions=function(){
 	return tableauQuestions;
 }
 
-<<<<<<< HEAD
-
-
-/* TABLEAU DE BORD - CHOIX TYPE ET NB QUESTIONS */
-
-
-$(function(){
-	
-var checkboxes = $("input[type='checkbox']");
-    submitButt = $("input[type='submit']");
-
-checkboxes.click(function() {
-    submitButt.attr("disabled", !checkboxes.is(":checked")); 
-});
-	
-});
-	
-
-=======
 var getNumQuestions=function(tableauidDomaine){
-	return getQuestionsFromDomaine(idDomaine).length;
+	return getQuestionsFromDomaine(tableauidDomaine).length;
 }
->>>>>>> c6c572908fce12175e58ce4b86f4948832b8171b
+
