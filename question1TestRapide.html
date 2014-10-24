@@ -47,7 +47,8 @@
 				
 					<a href="tableauDeBord.html" class="bouton">Retour au menu</a>
 					<a href="#" class="bouton" id="correction">Corriger</a>
-					<a class="bouton" id="questionSuivante" href="#">Question Suivante</a>
+					<a class="bouton" id="questionSuivante" href="#" hidden>Question Suivante</a>
+					
 				</section>
 			</section>
 			<!-- 
@@ -123,8 +124,10 @@
 
 
     <script type="text/javascript">
+    	// variable qui donne ma question
     	var i;
-    	var tableauQuestions;
+    	// le tableau des question importé sur la page
+    	var monTableauQuestions;
 
     	$( document ).ready(function() {
 			// je récupère toutes les questions en local
@@ -141,7 +144,51 @@
 				$("#rep"+(j+1)).text('');
 				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
 			}
+			// ici je uncheck tous les boutons radio
+			$("input:radio").attr("checked", false);
 		});
+
+
+
+
+
+    	// on click on correction
+    	$("#correction").click( function(){
+    		if($("input:radio[name='r1']").is(":checked")){ 
+
+    			// Controle si la réponse est bonne ( comparaison avec le text de la répons coché )
+				if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
+					// ici je met le texte en vert si la réponse est bonne
+					$("input:radio[name='r1']:checked").parent().css({
+						"background-color": 'green',
+					});
+				}
+				else{
+					// ici je met le texte en vert pour la bonne réponse
+					  $("input:radio[name='r1']").each(function(){
+					  	if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $(this).parent().text() ){
+	    					// ici je met le texte en vert si la réponse est bonne
+							$(this).parent().css({
+								"background-color": 'green',
+							});
+						}
+					  });
+
+					// ici je met le texte en rouge si la réponse est mauvaise
+					$("input:radio[name='r1']:checked").parent().css({
+						"background-color": 'red',
+					});
+				}
+    			
+
+				// je cache le bouton de correction et j'affiche la question suivante
+				$("#correction").hide();
+				$("#questionSuivante").show();
+    		}
+			else{
+				alert("it's not checked");
+			}
+    	});
 
 
     	// on click on Question Suivante
@@ -158,39 +205,16 @@
     				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
     			}
     		}
+
+    		// ici j'enlève le style si l'utilisateur a corrigé auparavant
+			$("input:radio").attr("checked", false);
+			$("input:radio[name='r1']").each(function(){
+				$(this).parent().removeAttr('style');
+		  	});
+
+		  	$("#correction").show();
+			$("#questionSuivante").hide();
     	});
-
-
-    	// on click on correction
-    	$("#correction").click( function(){
-    		if($("input:radio[name='r1']").is(":checked")){ 
-
-    			// Controle si la réponse est bonne ( comparaison avec le text de la répons coché )
-				if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
-					alert("oh yeah !");
-
-					// ici je met le texte en vert si la réponse est bonne
-					$("input:radio[name='r1']:checked").parent().css({
-						"background-color": 'green',
-					});
-				}
-				else{
-					// ici je met le texte en rouge si la réponse est mauvaise
-					$("input:radio[name='r1']:checked").parent().css({
-						"background-color": 'red',
-					});
-				}
-    			
-    		}
-			else{
-				alert("it's not checked");
-			}
-
-
-
-
-    	});
-
 
     </script>
 
