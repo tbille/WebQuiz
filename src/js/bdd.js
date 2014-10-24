@@ -194,7 +194,6 @@ var getAllQuestions=function(){
 	Entrée : -
 	Sortie : nombre d'éléments du tableau de question:integer
 */
-
 var getNumQuestions=function(tableauidDomaine){
 	return getQuestionsFromDomaine(tableauidDomaine).length;
 }
