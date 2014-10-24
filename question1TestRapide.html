@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 	<title>Question 1 Test Rapide</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/style.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="bdd.js"></script>
+    <script src="src/js/bdd.js"></script>
 
 
 
@@ -139,6 +139,7 @@
 			for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
 				$("#rep"+(j+1)).text('');
 				$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+				
 			}
 		});
 
