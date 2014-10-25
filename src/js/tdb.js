@@ -32,7 +32,7 @@ $(function(){
 			// convertion du nombre de question en int
 			var val = parseInt($("#nbQuestions").val()) ;
 
-			var nbQuestions = getNumQuestions(tableauIDChecked));
+			var nbQuestions = getNumQuestions(tableauIDChecked);
 
 			// controle du nombre de question
 			if( val<0 || val>nbQuestions ){
@@ -40,16 +40,7 @@ $(function(){
 			}
 		}
 
-
-		return false;
-/*
-
-
-		if (erreur) {return false;}
-		else{
-			return true;
-		}
-*/
+		return !erreur;
 		
 	});
 
