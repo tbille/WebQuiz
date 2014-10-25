@@ -45,11 +45,11 @@
 				<!-- Bouton Examen -->				
 				<section id="examen">
 					<h2>Début d'un examen officiel</h2>
-
-					<p >Erreur
-					<p>qsdfjhqsdfqsdfjqhdskflq
-					</p>	
-					</p>	
+					<div class="alert-box error" hidden>
+						<img src="src/image/error.png" alt="erreur" id="erreurmsg"/> 
+						<span> Oops! </span>
+						<p>Veuillez répondre à toutes les questions</p>
+					</div>
 					<form method="POST" action="./questionExamen.html">
 						<p>Choisissez le domaine des questions :</p>
 						<ul class="a-form">
@@ -59,7 +59,7 @@
 						</ul>	
 						<p>Choisissez le nombre de questions :</p>
 						<input type="number" min="1" max="10" id="nbQuestions"/>
-						<!-- <a href="questionExamen.html" class="bouton">Examen</a>  -->
+						<!-- <a href="questionExamen.html" id="monSubmit">Examen</a> -->
 						<input class="bouton" type="submit" value="Examen officiel" id="monSubmit"/>
 					</form>
 					
