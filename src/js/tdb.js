@@ -30,16 +30,18 @@ $(function(){
 			}
 
 			// convertion du nombre de question en int
-			var val = parseInt($("#nbQuestions").val()) ;
+			var valeur = parseInt($("#nbQuestions").val()) ;
 
 			var nbQuestions = getNumQuestions(tableauIDChecked);
 
 			// controle du nombre de question
-			if( val<0 || val>nbQuestions ){
+			if(  valeur<1 || valeur>nbQuestions ){
 				erreur = true;
 			}
 		}
 
+		localStorage.setItem("tableauID", tableauIDChecked);
+		localStorage.setItem("nombreQuestions", valeur);
 		return !erreur;
 		
 	});

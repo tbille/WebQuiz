@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 	<title>Question Examen</title>
     <link rel="stylesheet" href="src/css/style.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="src/js/bdd.js"></script>
 </head>
 <body>
     <div id="canevas">
@@ -22,21 +25,24 @@
 
             -->
 			<section class="contenuPageQuestions">
-				<h1>Examen officiel</h1>
+				<h1>Question</h1>
 				<section>
-					<h2>Domaine: HTML</h2>
+					<h2 id="numQuestion">Question</h2>
 					<fieldset>
-						<p>Question 1/2: Quel est le doctype d'un document HTML5?</p>
+						<p id="question"></p>
 						<ul class="a-form">
-							<li><label for="1"><input name="r1" type="radio">réponse 1</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 2</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 3</label></li>
-							<li><label for="1"><input name="r1" type="radio">réponse 4</label></li>
+							<li><input name="r1" type="radio" id="inp1"><label for="1" id="rep1"></label></li>
+							<li><input name="r1" type="radio" id="inp2"><label for="1" id="rep2"></label></li>
+							<li><input name="r1" type="radio" id="inp3"><label for="1" id="rep3"></label></li>
+							<li><input name="r1" type="radio" id="inp4"><label for="1" id="rep4"></label></li>
 						</ul>
 					</fieldset>
-
+				
 					<a href="tableauDeBord.html" class="bouton">Retour au menu</a>
-					<a href="resultat.html" class="bouton">Terminer</a>
+					<a href="#" class="bouton" id="correction">Corriger</a>
+					<a class="bouton" id="questionSuivante" href="#" hidden>Question Suivante</a>
+					<a class="bouton" id="finQuestionnaire" href="resultat.html" hidden>Fin Questionnaire</a>
+					
 				</section>
 			</section>
 			<!-- 
@@ -109,6 +115,9 @@
 		</div>
 	</div>
 	<!-- /Modal -->
+
+	 <script src="src/js/examen.js"></script>
+
 
 </body>
 </html>
