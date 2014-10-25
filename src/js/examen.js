@@ -16,29 +16,47 @@ var nbQuestions ;
 var numQuestionActuelle ;
 // nombre de questions reussi
 var nbQuestionsReussi;
+// Questions qui passent
+var tableauQuestions;
 
 
 $( document ).ready(function() {
-	// je récupère les questions en fnction des domaines choisis
+	// je récupere les identifiant des domaines, si il n'existe pas alors je viens d'une autre page que le tableau de bord ( donc je redirige )
 	var tableauID = localStorage.getItem("tableauID"); 
-	monTableauQuestions = getQuestionsFromDomaine(tableauID);
-
-	nbQuestions = localStorage.getItem("nombreQuestions");
-	numQuestionActuelle = 1;
-
-	// Choix d'une question aléatoire
-	i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
-
-	// affichage de la question
-	$("#question").text(monTableauQuestions[i].question);
-
-	// parcours de toutes les réponses + affichage des réponses possibles
-	for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
-		$("#rep"+(j+1)).text('');
-		$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+	// redirection si j'arrive sur la page sans avoir fait l'examen
+	if(tableauID == null ){
+		window.location.replace("tableauDeBord.html");
 	}
-	// ici je uncheck tous les boutons radio
-	$("input:radio").attr("checked", false);
+	else{
+		// je récupère les questions en fnction des domaines choisis
+		monTableauQuestions = getQuestionsFromDomaine(tableauID);
+
+		nbQuestions = localStorage.getItem("nombreQuestions");
+		nbQuestionsReussi=0;
+		numQuestionActuelle = 1;
+		tableauQuestions=[];
+
+		localStorage.removeItem("tableauID");
+		localStorage.removeItem("nombreQuestions");
+
+
+		// Choix d'une question aléatoire
+		i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+		tableauQuestions.push(i);
+		var nomDomaine = getNameDomaineFromID(monTableauQuestions[i].domaine);
+
+		$("#numQuestion").text("Question " + numQuestionActuelle + " - " + nomDomaine.toUpperCase());
+		// affichage de la question
+		$("#question").text(monTableauQuestions[i].question);
+
+		// parcours de toutes les réponses + affichage des réponses possibles
+		for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
+			$("#rep"+(j+1)).text('');
+			$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+		}
+		// ici je uncheck tous les boutons radio
+		$("input:radio").attr("checked", false);
+	}
 });
 
 
@@ -89,6 +107,9 @@ $("#correction").click( function(){
 		// je cache le bouton de correction et j'affiche la question suivante
 		$("#correction").hide();
 		if(numQuestionActuelle==nbQuestions){
+			// j'enregistre le nombre de questions reussi et faites
+			localStorage.setItem("nbQuestionsReussi", nbQuestionsReussi);
+			localStorage.setItem("nbQuestions",nbQuestions);
 			$("#finQuestionnaire").show();
 		}
 		else{
@@ -104,7 +125,15 @@ $("#questionSuivante").click( function(){
 	// on augmente la question actuelle
 	numQuestionActuelle++;
 	// récuperation d'un numéro aléatoire pour la question
-	i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+	do{
+		i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+	}while($.inArray(i, tableauQuestions)!=-1)
+	
+	tableauQuestions.push(i);
+	var nomDomaine = getNameDomaineFromID(monTableauQuestions[i].domaine);
+
+	$("#numQuestion").text("Question " + numQuestionActuelle + " - " + nomDomaine.toUpperCase());
+
 	if(i<monTableauQuestions.length){
 		// affichage de la question
 		$("#question").text(monTableauQuestions[i].question);
