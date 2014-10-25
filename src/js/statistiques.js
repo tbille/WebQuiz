@@ -51,10 +51,10 @@ var initialiaseVariables = function(){
 		NbQuestionReussies:0,
 		NbQuestionsTotal:0
 	};
-	var examens = [];
+	var examens = new Array();
 
 	setObjectInLS("resTestsRapide",  testsRapide);
-	localStorage.setItem("tabExamen", examens);
+	setObjectInLS("tabExamen", examens);
 }
 
 
@@ -92,7 +92,7 @@ EXAMEN
 **/
 
 var ajouteExamen = function(_resultat, _tableauIdDomaine){
-	var mesExamens = localStorage.getItem("tabExamen");
+	var mesExamens = getObjectInLS("tabExamen");
 	var monExam = {
 		tabId: _tableauIdDomaine,
 		resultatExamen: _resultat
@@ -101,21 +101,26 @@ var ajouteExamen = function(_resultat, _tableauIdDomaine){
 	mesExamens.push(monExam);
 
 	localStorage.removeItem("tabExamen");
-	localStorage.setItem("tabExamen", mesExamens);
+	setObjectInLS("tabExamen", mesExamens);
 }
 
-var calculPourcentageExmen = function(){
-	var mesExamens = localStorage.getItem("tabExamen");
+var calculPourcentageExamen = function(){
+	var mesExamens = getObjectInLS("tabExamen");
 	var somme = 0;
 	for (var i = 0; i < mesExamens.length; i++) {
-		somme = mesExamens[i].resultatExamen;
+		somme += mesExamens[i].resultatExamen;
 	};
 
-	return (somme / mesExamens.length) * 100;
+	if(mesExamens.length == 0 ){
+		return 0;
+	}
+	else{
+		return  Math.round(((somme / mesExamens.length)/20) * 100);
+	}
 }
 
 var getAllExams = function(){
-	return localStorage.getItem("tabExamen");
+	return getObjectInLS("tabExamen");
 }
 
 
