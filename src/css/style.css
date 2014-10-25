@@ -716,3 +716,29 @@ aside h2 {
 }
 
 /* FIN FENETRE MODAL */
+
+
+
+/* Message d'erreur Tableau bord choix Questions Exam */
+
+.alert-box {
+		color:#e54d40;
+		border-radius:10px;
+		font-family:'Open Sans', sans-serif;
+		font-size:11px;
+		padding:10px 36px;
+		margin:10px 0px;
+	}
+	.alert-box span {
+		font-weight:bold;
+		font-size: 19px;
+		padding-left: 5px;
+	}
+	.error {
+		background:#ffecec no-repeat 10px 50%;
+		border:1px solid #f5aca6;
+	}
+
+.alert-box p {
+	color: #f07970
+}
