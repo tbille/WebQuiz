@@ -8,6 +8,13 @@
 
 
 $( document ).ready(function() {
+	// initialisation à faire dans chaque fichier pour vérifier si les varibles en locales sont initialisée
+	if(!isInitialise()){
+		initialiaseVariables();
+	}
+	$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
+
+
 
 	var nbQuestionsReussi = localStorage.getItem("nbQuestionsReussi"); 
 	var nbQuestions = localStorage.getItem("nbQuestions"); 
@@ -17,7 +24,12 @@ $( document ).ready(function() {
 		window.location.replace("tableauDeBord.html");
 	}
 	else{
-		$("#note").text(nbQuestionsReussi + "/" + nbQuestions);
+
+		var noteSur20 = Math.round((nbQuestionsReussi/nbQuestions) * 20);
+
+		$("#note").text(noteSur20 + "/20" );
+
+
 
 		localStorage.removeItem("nbQuestionsReussi"); 
 		localStorage.removeItem("nbQuestions"); 

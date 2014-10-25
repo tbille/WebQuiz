@@ -12,6 +12,13 @@ var i;
 var monTableauQuestions;
 
 $( document ).ready(function() {
+	
+	// initialisation à faire dans chaque fichier pour vérifier si les varibles en locales sont initialisée
+	if(!isInitialise()){
+		initialiaseVariables();
+	}
+	$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
+
 	// je récupère toutes les questions en local
 	monTableauQuestions = getAllQuestions();
 
@@ -48,6 +55,8 @@ $("#correction").click( function(){
 				"margin-top": '1px',
 				"margin-bottom": '1px',
 			});
+
+			addQuestionTest(true);
 		}
 		else{
 			// ici je met le texte en vert pour la bonne réponse
@@ -70,8 +79,12 @@ $("#correction").click( function(){
 				"padding": '3px 10px',
 				"border-radius": '25px',	
 			});
+
+			addQuestionTest(false);
 		}
 		
+		// mise à jour des statisitques
+		$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
 
 		// je cache le bouton de correction et j'affiche la question suivante
 		$("#correction").hide();

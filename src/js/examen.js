@@ -21,6 +21,13 @@ var tableauQuestions;
 
 
 $( document ).ready(function() {
+	// initialisation à faire dans chaque fichier pour vérifier si les varibles en locales sont initialisée
+	if(!isInitialise()){
+		initialiaseVariables();
+	}
+	$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
+
+	
 	// je récupere les identifiant des domaines, si il n'existe pas alors je viens d'une autre page que le tableau de bord ( donc je redirige )
 	var tableauID = localStorage.getItem("tableauID"); 
 	// redirection si j'arrive sur la page sans avoir fait l'examen

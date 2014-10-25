@@ -1,5 +1,5 @@
 
-
+/*
 
 var resTestsrapide {
 	nombre de question test réussi : 0
@@ -37,8 +37,8 @@ tableau d'examen[
 
 /* Initialise les stats au debut de la session*/
 
-var isInitialise() = function(){
-	if( localStorage.resTestsRapide) {
+var isInitialise = function(){
+	if( localStorage.getItem("resTestsRapide")!=null && localStorage.getItem("tabExamen")!=null) {
 		return true;
 	}
 	else{
@@ -46,67 +46,85 @@ var isInitialise() = function(){
 	}
 }
 
-var initialiase = function(){
-	var resTestsRapide = {
-		NbQuestionReussies : 0,
-		NbQuestionsTotal : 0
-	}
-	localStorage.resTestsRapide = resTestsRapide;
+var initialiaseVariables = function(){
+	var testsRapide = {
+		NbQuestionReussies:0,
+		NbQuestionsTotal:0
+	};
+	var examens = [];
+
+	setObjectInLS("resTestsRapide",  testsRapide);
+	localStorage.setItem("tabExamen", examens);
 }
 
 
 /* Nombre de questions reussies, true/false : si reussi +1, sinon 0  */
 var addQuestionTest = function(isReussi){
-	if isReussi 
-		localStorage.resTestsrapide.NbQuestionReussies ++;
-		localStorage.resTestsrapide.NbQuestionsTotal ++;
-	else
-		localStorage.resTestsrapide.NbQuestionsTotal ++;
-
+	var mesRes = getObjectInLS("resTestsRapide");
+	if (isReussi) { 
+		mesRes.NbQuestionReussies ++;
+		mesRes.NbQuestionsTotal ++;
+	}
+	else{
+		mesRes.NbQuestionsTotal ++;
+	}
+	localStorage.removeItem("resTestsRapide");
+	setObjectInLS("resTestsRapide", mesRes);
 }
-var monObjet = localStorage.resTestsRapide ;
 
-resTestsrapide.NbQuestionReussies ++;
-resTestsrapide.NbQuestionsTotal
-
-
-if (localStorage.QuestionsReussies) {
-	localStorage.QuestionsReussies = Number(localStorage.QuestionsReussies) ++;
-} else {
-	localStorage.QuestionsReussies = 0;
-}
 
 /* Calcul du pourcentage de questions reussies sur le nombre de questions total */
-function getTotal() {
-	return objet.QuestionsReussies / objet.nbQuestion * 100
+var getPourcentageTestRapide = function() {
+	var mesRes = getObjectInLS("resTestsRapide");
+	if(mesRes.NbQuestionsTotal == 0){
+		return 0;
+	}
+	else{
+		return  Math.round(mesRes.NbQuestionReussies / mesRes.NbQuestionsTotal * 100);
+	}
 }
 	
-/* Affiche le Pourcentage dans la barre de Statistiques */
-document.getElementById("CumulTestRapide").innerHTML = "PourcentTestRapide"
-	
-
-
-	if true then
-		objet.nbReuss ++
-		objet.nbQuestion ++
-	else
-		objet.nbQuestion ++
-	
-		end if
-end
-
-
-
 
 /**
 
 EXAMEN
 
-*/
+**/
 
-ajouteExamen(note)
+var ajouteExamen = function(_resultat, _tableauIdDomaine){
+	var mesExamens = localStorage.getItem("tabExamen");
+	var monExam = {
+		tabId: _tableauIdDomaine,
+		resultatExamen: _resultat
+	};
 
-calculPourcentageExmen()
+	mesExamens.push(monExam);
 
-getAllExams()
-	return tableau
+	localStorage.removeItem("tabExamen");
+	localStorage.setItem("tabExamen", mesExamens);
+}
+
+var calculPourcentageExmen = function(){
+	var mesExamens = localStorage.getItem("tabExamen");
+	var somme = 0;
+	for (var i = 0; i < mesExamens.length; i++) {
+		somme = mesExamens[i].resultatExamen;
+	};
+
+	return (somme / mesExamens.length) * 100;
+}
+
+var getAllExams = function(){
+	return localStorage.getItem("tabExamen");
+}
+
+
+
+var setObjectInLS = function(_name, _object){
+	localStorage.setItem(_name,  JSON.stringify(_object));
+}
+
+var getObjectInLS = function(_nameLS ){
+	var myObject = localStorage.getItem(_nameLS);
+	return JSON.parse(myObject);
+}
