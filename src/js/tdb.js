@@ -53,12 +53,12 @@ $(function(){
 			iterations++;
 		});
 
-		if(!erreur){
-			// si j'ai aucun domaine alors aucun check j'ai une erreur
-			if( tableauIDChecked.length < 1) {
-				erreur = true;
-			}
+		if(tableauIDChecked.length == 0){
+			erreur = true;
+			var msgErreur = "Veuillez sélectionner un domaine !";
+		}
 
+		if(!erreur){
 			// convertion du nombre de question en int
 			var valeur = parseInt($("#nbQuestions").val()) ;
 
@@ -67,7 +67,14 @@ $(function(){
 			// controle du nombre de question
 			if(  valeur<1 || valeur>nbQuestions ){
 				erreur = true;
+				var msgErreur = "Veuillez saisir un nombre de questions entre 1 et " + nbQuestions + " !";
 			}
+
+		}
+
+		if(erreur){
+			$(".error").show();
+			$(".msgErreur").text(msgErreur);
 		}
 
 		localStorage.setItem("tableauID", tableauIDChecked);
