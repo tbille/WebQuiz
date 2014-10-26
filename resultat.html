@@ -4,6 +4,11 @@
 	<meta charset="utf-8">
 		<title>Tableau de Bord</title>
 	    <link rel="stylesheet" href="src/css/style.css">
+
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<script src="src/js/bdd.js"></script>
+    	<script src="src/js/statistiques.js"></script>
+   		
     </head>
 	<body>
     <div id="canevas">
@@ -31,11 +36,11 @@
 				<!-- Bouton de test rapide -->
 				<section>
 					<h2>Résultat</h2>
-					<p>Félicitations! Vous avez gagné !</p>
+					<p>Félicitations! Vous avez finit l'examen !</p>
 				</section>	
 				<section>
 					<h2> Note finale </h2>
-					<p>10/10</p>
+					<p id="note"></p>
 				</section>
 
 				<!-- Bouton Examen -->
@@ -54,11 +59,11 @@
 				
 				<section>
 					<h2>Note cumulative test rapide</h2>
-					<p>100%</p>
+					<p id="CumulTestRapide"></p>
 				</section>
 				<section>
 					<h2>Note moyenne des examen</h2>
-					<p>100%</p>
+					<p id="CumulExamen"></p>
 				</section>
 				
 				<!-- ajout javascript dans lien -->
@@ -89,31 +94,23 @@
 	<div class="modal" id="modal-one" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-header">
-			  <h2>Résultats détaillés des examens</h2>
-			  <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
+				<h2>Résultats détaillés des examens</h2>
+				<a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
 			</div>
 			<div class="modal-body">
-			  <p>
-				<ul>
-					<li>Examen 1 (HTML): 20 / 20</li>
-					<li>Examen 2 (CSS): 10 / 20</li>
-					<li>Examen 3 (HTML): 15 / 20</li>
-					<li>Examen 4 (Javascript): 19 / 20</li>
-					<li>Examen 5 (HTML): 20 / 20</li>
-					<li>Examen 6 (CSS): 10 / 20</li>
-					<li>Examen 7 (HTML): 15 / 20</li>
-					<li>Examen 8 (Javascript): 19 / 20</li>
-					<li>Examen 9 (Javascript): 19 / 20</li>
-					<li>Examen 10 (HTML): 20 / 20</li>
-				</ul>
-			</p>
+				<p>
+					<ul id="examens">
+					</ul>
+				</p>
 			</div>
 			<div class="modal-footer">
-			  <a href="#close" class="btn">Fermer</a>  <!--CHANGED TO "#close"-->
+				<a href="#close" class="btn">Fermer</a>  <!--CHANGED TO "#close"-->
 			</div>
 		</div>
 	</div>
 	<!-- /Modal -->
+
+	<script src="src/js/resultat.js"></script>
 
 </body>
 </html>

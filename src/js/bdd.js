@@ -160,7 +160,7 @@ var getNameDomaineFromID = function (id){
 	while(tableauDomaines[i].id!=id){
 		i++;
 	}
-	return tableauDomaines[i];
+	return tableauDomaines[i].nom;
 }
 
 /*

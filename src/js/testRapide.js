@@ -7,24 +7,48 @@
 
 
 // variable qui donne ma question
-var i;
+var questionActuelle;
 // le tableau des question importé sur la page
 var monTableauQuestions;
 
 $( document ).ready(function() {
+	
+	// initialisation à faire dans chaque fichier pour vérifier si les varibles en locales sont initialisée
+	if(!isInitialise()){
+		initialiaseVariables();
+	}
+	$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
+	$("#CumulExamen").text(calculPourcentageExamen() + "%");
+
+	// je met tous les examens dans le modal
+	var examensFait = getAllExams();
+	for (var i = 0; i < examensFait.length; i++) {
+		var domaines = "";
+		if(examensFait[i].tabId.length>1){
+			i=i;
+		}
+		for (var j = 0; j < examensFait[i].tabId.length; j++) {
+			if(!isNaN(examensFait[i].tabId[j])){
+				domaines = domaines.concat(getNameDomaineFromID(examensFait[i].tabId[j])+"/");
+			}
+		};
+		domaines = domaines.substring(0, domaines.length - 1);
+		$("#examens").append("<li>Examen " + (i+1) +" ("+domaines.toUpperCase()+") :" +  examensFait[i].resultatExamen + "/20 </li>");	
+	};
+
 	// je récupère toutes les questions en local
 	monTableauQuestions = getAllQuestions();
 
 	// Choix d'une question aléatoire
-	i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+	questionActuelle=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
 
 	// affichage de la question
-	$("#question").text(monTableauQuestions[i].question);
+	$("#question").text(monTableauQuestions[questionActuelle].question);
 
 	// parcours de toutes les réponses + affichage des réponses possibles
-	for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
+	for(var j=0;j<monTableauQuestions[questionActuelle].reponses.length;j++){
 		$("#rep"+(j+1)).text('');
-		$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+		$("#rep"+(j+1)).text(monTableauQuestions[questionActuelle].reponses[j]);
 	}
 	// ici je uncheck tous les boutons radio
 	$("input:radio").attr("checked", false);
@@ -39,7 +63,7 @@ $("#correction").click( function(){
 	if($("input:radio[name='r1']").is(":checked")){ 
 
 		// Controle si la réponse est bonne ( comparaison avec le text de la répons coché )
-		if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
+		if ( monTableauQuestions[questionActuelle].reponses[monTableauQuestions[questionActuelle].bonneReponse -1] == $("input:radio[name='r1']:checked").parent().text() ){
 			// ici je met le texte en vert si la réponse est bonne
 			$("input:radio[name='r1']:checked").parent().css({
 				"background-color": '#aedbae',	
@@ -48,11 +72,13 @@ $("#correction").click( function(){
 				"margin-top": '1px',
 				"margin-bottom": '1px',
 			});
+
+			addQuestionTest(true);
 		}
 		else{
 			// ici je met le texte en vert pour la bonne réponse
 			  $("input:radio[name='r1']").each(function(){
-			  	if ( monTableauQuestions[i].reponses[monTableauQuestions[i].bonneReponse -1] == $(this).parent().text() ){
+			  	if ( monTableauQuestions[questionActuelle].reponses[monTableauQuestions[questionActuelle].bonneReponse -1] == $(this).parent().text() ){
 					// ici je met le texte en vert si la réponse est bonne
 					$(this).parent().css({
 						"background-color": '#aedbae',
@@ -70,8 +96,12 @@ $("#correction").click( function(){
 				"padding": '3px 10px',
 				"border-radius": '25px',	
 			});
+
+			addQuestionTest(false);
 		}
 		
+		// mise à jour des statisitques
+		$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
 
 		// je cache le bouton de correction et j'affiche la question suivante
 		$("#correction").hide();
@@ -86,15 +116,15 @@ $("#correction").click( function(){
 // on click on Question Suivante
 $("#questionSuivante").click( function(){
 	// récuperation d'un numéro aléatoire pour la question
-	i=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
-	if(i<monTableauQuestions.length){
+	questionActuelle=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
+	if(questionActuelle<monTableauQuestions.length){
 		// affichage de la question
-		$("#question").text(monTableauQuestions[i].question);
+		$("#question").text(monTableauQuestions[questionActuelle].question);
 
 		// parcours de toutes les questions + affichage
-		for(var j=0;j<monTableauQuestions[i].reponses.length;j++){
+		for(var j=0;j<monTableauQuestions[questionActuelle].reponses.length;j++){
 			$("#rep"+(j+1)).text('');
-			$("#rep"+(j+1)).text(monTableauQuestions[i].reponses[j]);
+			$("#rep"+(j+1)).text(monTableauQuestions[questionActuelle].reponses[j]);
 		}
 	}
 
