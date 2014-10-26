@@ -84,3 +84,13 @@ $(function(){
 	});
 
 });
+
+
+/* Clear local Storage lorsque click sur bouton remise à zéro*/
+
+
+function reset_me(){
+ localStorage.clear();
+ window.location="tableauDeBord.html";
+ 
+}

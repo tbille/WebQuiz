@@ -133,3 +133,12 @@ var getObjectInLS = function(_nameLS ){
 	var myObject = localStorage.getItem(_nameLS);
 	return JSON.parse(myObject);
 }
+
+/* Clear local Storage lorsque click sur bouton remise à zéro*/
+
+
+function reset_me(){
+ localStorage.clear();
+ window.location="tableauDeBord.html";
+ 
+}

@@ -67,9 +67,9 @@ $( document ).ready(function() {
 		// Choix d'une question aléatoire
 		questionActuelle=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
 		tableauQuestions.push(i);
+		
 		var nomDomaine = getNameDomaineFromID(monTableauQuestions[questionActuelle].domaine);
-
-		$("#numQuestion").text("Question " + numQuestionActuelle + " - " + nomDomaine.toUpperCase());
+		$("#numQuestion").text("Question " + numQuestionActuelle + " - " + nomDomaine);
 		// affichage de la question
 		$("#question").text(monTableauQuestions[questionActuelle].question);
 
@@ -178,3 +178,13 @@ $("#questionSuivante").click( function(){
   	$("#correction").show();
 	$("#questionSuivante").hide();
 });
+
+
+/* Clear local Storage lorsque click sur bouton remise à zéro*/
+
+
+function reset_me(){
+ localStorage.clear();
+ window.location="tableauDeBord.html";
+ 
+}

@@ -36,7 +36,7 @@
 				<!-- Bouton de test rapide -->
 				<section>
 					<h2>Résultat</h2>
-					<p>Félicitations! Vous avez finit l'examen !</p>
+					<p id="messageResultat"></p>
 				</section>	
 				<section>
 					<h2> Note finale </h2>
@@ -62,14 +62,15 @@
 					<p id="CumulTestRapide"></p>
 				</section>
 				<section>
-					<h2>Note moyenne des examen</h2>
+					<h2>Note moyenne des examens</h2>
 					<p id="CumulExamen"></p>
 				</section>
 				
 				<!-- ajout javascript dans lien -->
 				<p></p><a href="#modal-one" class="btn btn-big">Voir détails</a></p>
 				
-
+				<!-- ajout remise a zero -->
+			 	<p><button id="reset_it" onClick="javascript:reset_me();" />Remise à zéro</button></p>
 				
 			</aside>
 		</div>
