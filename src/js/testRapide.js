@@ -17,8 +17,10 @@ $( document ).ready(function() {
 	if(!isInitialise()){
 		initialiaseVariables();
 	}
+	$("#CourantTestRapide").text(getCourantTestRapide());
 	$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
 	$("#CumulExamen").text(calculPourcentageExamen() + "%");
+	
 
 	// je met tous les examens dans le modal
 	var examensFait = getAllExams();
@@ -102,6 +104,12 @@ $("#correction").click( function(){
 		
 		// mise à jour des statisitques
 		$("#CumulTestRapide").text(getPourcentageTestRapide() + "%");
+		
+		
+		// mise à jour des statisitques
+		$("#CourantTestRapide").text(getCourantTestRapide());
+		
+		
 
 		// je cache le bouton de correction et j'affiche la question suivante
 		$("#correction").hide();
@@ -140,10 +148,17 @@ $("#questionSuivante").click( function(){
 
 
 /* Clear local Storage lorsque click sur bouton remise à zéro*/
-
-
 function reset_me(){
  localStorage.clear();
  window.location="tableauDeBord.html";
  
 }
+
+
+
+
+
+		
+		
+
+		

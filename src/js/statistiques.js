@@ -83,7 +83,20 @@ var getPourcentageTestRapide = function() {
 		return  Math.round(mesRes.NbQuestionReussies / mesRes.NbQuestionsTotal * 100);
 	}
 }
-	
+
+
+/*Calcul de la note courante Test rapide */
+
+var getCourantTestRapide = function() {
+	var mesRes = getObjectInLS("resTestsRapide");
+	if(mesRes.NbQuestionsTotal == 0){
+		return 0;
+	}
+	else{
+		return  (mesRes.NbQuestionReussies + '/' + mesRes.NbQuestionsTotal) ;
+	}
+}
+
 
 /**
 
