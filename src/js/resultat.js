@@ -39,7 +39,9 @@ $( document ).ready(function() {
 
 	// redirection si j'arrive sur la page sans avoir fait l'examen
 	if(nbQuestions == null ){
-		window.location.replace("tableauDeBord.html");
+		/*window.location.replace("tableauDeBord.html");  J'ai enlevé cette ligne-ci et j'ai ajouté les suivantes pour que l'utilisateur arrive à la page Résultat s'il abandonne point 6 du TP3*/
+		$("#messageResultat").text("Ayez un peu plus de persévérence!" );	
+		$("#note").text(calculPourcentageExamen() + "%");
 	}
 	else{
 
