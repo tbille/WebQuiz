@@ -44,6 +44,9 @@ $( document ).ready(function() {
 	// Choix d'une question aléatoire
 	questionActuelle=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
 
+	var nomDomaine = getNameDomaineFromID(monTableauQuestions[questionActuelle].domaine);
+	$("#numQuestion").text("Question " + nomDomaine);
+
 	// affichage de la question
 	$("#question").text(monTableauQuestions[questionActuelle].question);
 
@@ -126,6 +129,8 @@ $("#questionSuivante").click( function(){
 	// récuperation d'un numéro aléatoire pour la question
 	questionActuelle=Math.floor(Math.random() * ((monTableauQuestions.length-1) + 1) + 0);
 	if(questionActuelle<monTableauQuestions.length){
+		var nomDomaine = getNameDomaineFromID(monTableauQuestions[questionActuelle].domaine);
+		$("#numQuestion").text("Question " + nomDomaine);
 		// affichage de la question
 		$("#question").text(monTableauQuestions[questionActuelle].question);
 
