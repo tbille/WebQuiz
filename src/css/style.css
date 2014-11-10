@@ -710,6 +710,7 @@ aside h2 {
   border-top: #eeeeee solid 1px;
   text-align: right;
 }
+
 /*ADDED TO STOP SCROLLING TO TOP*/
 #close {
   display: none;
