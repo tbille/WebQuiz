@@ -79,14 +79,6 @@ else if (10 <= notemsg && notemsg < 15) {
 else if (15 <= notemsg && notemsg < 20) {
     $("#messageResultat").text("C'est très bien!" );
 } 
-
-
-
-
-
-
-
-
 });
 
 
